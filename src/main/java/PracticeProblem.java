@@ -1,8 +1,7 @@
-
+import java.util.concurrent.TimeUnit;
 public class PracticeProblem {
 
 	public static void main(String args[]) {
-
 	}
 
 	public static void q1() {
@@ -25,13 +24,20 @@ public class PracticeProblem {
 		//Write question 5 code here
 	}
 
+
 	public static int towerOfHanoi(int towerSize) {
 		if (towerSize < 3) {
 			return -1;
 		}
-		return (int) Math.pow(2, towerSize) - 1;
-		// I would've been more interested if it asked us to actually perform the task.
+		// exit case
+		if (towerSize == 3) {
+			return 7;
+		}
+		return 2 * towerOfHanoi(towerSize - 1) + 1;
+
 	}
+	
+
 }
 
 /*
